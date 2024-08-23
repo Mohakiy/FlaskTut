@@ -7,18 +7,28 @@
     <style>
       #banner {
         height: 500px;
-        width: 60%;
-        object-fit: cover;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: 16px;
       }
     </style>
     <title>Home</title>
   </head>
   <body>
+    {% include "nav.html" %}
+    <img class="img-fluid" id="banner" src="static/homebg.jpg">
     <div class="container">
       <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
-      <img class="img-fluid" id="banner" src="static/homebg.jpg">
-      <h2>About Jovian</h2>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae metus ut sapien porta mattis. Nunc lorem lorem, tempus eget nibh quis, efficitur varius quam. Maecenas posuere orci vel condimentum tempor. Duis nibh massa, varius ut ultricies in, ultrices sed neque. Donec laoreet eu dolor eu posuere. Suspendisse vel lectus iaculis, blandit tellus at, laoreet ipsum. Integer consequat pharetra neque, a blandit nibh accumsan a.</p>
+      <div class="row" style="margin-bottom: 16px;">
+        <div class="col-md-6">
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam vitae metus ut sapien porta mattis. Nunc lorem lorem, tempus eget nibh quis, efficitur varius quam. Maecenas posuere orci vel condimentum tempor. Duis nibh massa, varius ut ultricies in, ultrices sed neque. Donec laoreet eu dolor eu posuere. Suspendisse vel lectus iaculis, blandit tellus at, laoreet ipsum. Integer consequat pharetra neque, a blandit nibh accumsan a.
+        </p>
+        </div>
+        <div class="d-none d-md-block col-6">
+          <img src="/static/people.jpg" style="height: 320px; border-radius: 4px;">"
+        </div>
+      </div>
       <h2 class="text-center mt-2 mb-4">Open Positions</h2>
       <div>
       {% for job in jobs %}
@@ -30,5 +40,6 @@
         <p>Copyright 2022, Jovian</p>
       </div>
     </div>
+    {% include "footer.html" %}
   </body>
 </html>
